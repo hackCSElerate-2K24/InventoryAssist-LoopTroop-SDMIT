@@ -10,7 +10,11 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 
 function ItemTable() {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState([
+        { id: 1, name: "Sample Item 1", quantity: 100 },
+        { id: 2, name: "Sample Item 2", quantity: 200 },
+        { id: 3, name: "Sample Item 3", quantity: 300 },
+    ]);
 
     // Function to fetch items from the backend
     const fetchItems = async () => {
@@ -24,13 +28,13 @@ function ItemTable() {
 
     // Fetch items when component mounts
     useEffect(() => {
-        fetchItems();
+        // fetchItems();
     }, []);
 
     return (
-        <Table>
-            <TableHeader>
-                <TableRow>
+        <Table className="w-screen p-20 m-20">
+            <TableHeader >
+                <TableRow >
                     <TableHead>ID</TableHead>
                     <TableHead>Item Name</TableHead>
                     <TableHead>Quantity</TableHead>
