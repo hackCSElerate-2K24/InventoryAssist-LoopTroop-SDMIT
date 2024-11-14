@@ -57,9 +57,9 @@ function Navbar() {
                         <img src={burgermenu} alt="" className="h-10 aspect-square" />
                 </SheetTrigger>
                 <SheetContent className="flex flex-col justify-between">
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 mt-8">
                     {items.map((item) => (
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 hover:bg-gray-200 rounded-xl p-4">
                             <Link to={item.url} className="flex gap-4 items-center" onClick={()=>{ref.current?.click()}}>
                             <img src={item.icons} className="size-5 object-cover"></img>
                                 <span className="text-xl">
