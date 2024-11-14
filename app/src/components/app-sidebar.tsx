@@ -6,18 +6,36 @@ import supplier from "../assets/supplier.svg"
 import home from "../assets/home.png"
 
 
+const items = [
+  {
+    title: "DashBoard",
+    url: "/",
+    icons: home,
+  },
+  {
+    title: "Inventory",
+    url: "/inventory",
+    icons: inventory
+  },
+  {
+    title: "Category",
+    url: "/category",
+    icons:category
+  },
+  {
+    title: "Suppliers",
+    url: "/suppliers",
+    icons:supplier
+    
+  },
+  {
+    title: "Settings",
+    url: "/setting",
+    icons: gear,
+  },
+]
 
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
 
 // Menu items.
 const items = [
