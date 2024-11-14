@@ -48,7 +48,7 @@ const items = [
 function Navbar() {
     const ref = useRef(null);
     return (
-        <div className="px-8 bg-white border-b-2 h-16 flex items-center justify-between fixed top-0 left-0 w-screen">
+        <div className="z-50 px-8 bg-white border-b-2 h-16 flex items-center justify-between fixed top-0 left-0 w-screen">
             <div className="logo bg-orange-100 w-10 h-full">
             </div>
             <div className="">
