@@ -11,9 +11,16 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ItemTableImport } from './routes/itemTable'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const ItemTableRoute = ItemTableImport.update({
+  id: '/itemTable',
+  path: '/itemTable',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -32,6 +39,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/itemTable': {
+      id: '/itemTable'
+      path: '/itemTable'
+      fullPath: '/itemTable'
+      preLoaderRoute: typeof ItemTableImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -39,32 +53,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/itemTable': typeof ItemTableRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/itemTable': typeof ItemTableRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/itemTable': typeof ItemTableRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/itemTable'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/itemTable'
+  id: '__root__' | '/' | '/itemTable'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ItemTableRoute: typeof ItemTableRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ItemTableRoute: ItemTableRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +96,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/itemTable"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/itemTable": {
+      "filePath": "itemTable.tsx"
     }
   }
 }
