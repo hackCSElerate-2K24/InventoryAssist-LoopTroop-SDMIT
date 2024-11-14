@@ -11,9 +11,44 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SuppliersImport } from './routes/suppliers'
+import { Route as SettingImport } from './routes/setting'
+import { Route as ItemTableImport } from './routes/itemTable'
+import { Route as InventoryImport } from './routes/inventory'
+import { Route as CategoryImport } from './routes/category'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const SuppliersRoute = SuppliersImport.update({
+  id: '/suppliers',
+  path: '/suppliers',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SettingRoute = SettingImport.update({
+  id: '/setting',
+  path: '/setting',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ItemTableRoute = ItemTableImport.update({
+  id: '/itemTable',
+  path: '/itemTable',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InventoryRoute = InventoryImport.update({
+  id: '/inventory',
+  path: '/inventory',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CategoryRoute = CategoryImport.update({
+  id: '/category',
+  path: '/category',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -32,6 +67,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/category': {
+      id: '/category'
+      path: '/category'
+      fullPath: '/category'
+      preLoaderRoute: typeof CategoryImport
+      parentRoute: typeof rootRoute
+    }
+    '/inventory': {
+      id: '/inventory'
+      path: '/inventory'
+      fullPath: '/inventory'
+      preLoaderRoute: typeof InventoryImport
+      parentRoute: typeof rootRoute
+    }
+    '/itemTable': {
+      id: '/itemTable'
+      path: '/itemTable'
+      fullPath: '/itemTable'
+      preLoaderRoute: typeof ItemTableImport
+      parentRoute: typeof rootRoute
+    }
+    '/setting': {
+      id: '/setting'
+      path: '/setting'
+      fullPath: '/setting'
+      preLoaderRoute: typeof SettingImport
+      parentRoute: typeof rootRoute
+    }
+    '/suppliers': {
+      id: '/suppliers'
+      path: '/suppliers'
+      fullPath: '/suppliers'
+      preLoaderRoute: typeof SuppliersImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -39,32 +109,76 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/category': typeof CategoryRoute
+  '/inventory': typeof InventoryRoute
+  '/itemTable': typeof ItemTableRoute
+  '/setting': typeof SettingRoute
+  '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/category': typeof CategoryRoute
+  '/inventory': typeof InventoryRoute
+  '/itemTable': typeof ItemTableRoute
+  '/setting': typeof SettingRoute
+  '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/category': typeof CategoryRoute
+  '/inventory': typeof InventoryRoute
+  '/itemTable': typeof ItemTableRoute
+  '/setting': typeof SettingRoute
+  '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/itemTable'
+    | '/setting'
+    | '/suppliers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/itemTable'
+    | '/setting'
+    | '/suppliers'
+  id:
+    | '__root__'
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/itemTable'
+    | '/setting'
+    | '/suppliers'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CategoryRoute: typeof CategoryRoute
+  InventoryRoute: typeof InventoryRoute
+  ItemTableRoute: typeof ItemTableRoute
+  SettingRoute: typeof SettingRoute
+  SuppliersRoute: typeof SuppliersRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CategoryRoute: CategoryRoute,
+  InventoryRoute: InventoryRoute,
+  ItemTableRoute: ItemTableRoute,
+  SettingRoute: SettingRoute,
+  SuppliersRoute: SuppliersRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +191,31 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/category",
+        "/inventory",
+        "/itemTable",
+        "/setting",
+        "/suppliers"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/category": {
+      "filePath": "category.tsx"
+    },
+    "/inventory": {
+      "filePath": "inventory.tsx"
+    },
+    "/itemTable": {
+      "filePath": "itemTable.tsx"
+    },
+    "/setting": {
+      "filePath": "setting.tsx"
+    },
+    "/suppliers": {
+      "filePath": "suppliers.tsx"
     }
   }
 }
