@@ -31,7 +31,7 @@ function ItemTable() {
     }, []);
 
     return (
-        <Table className="w-screen p-20 m-20">
+        <Table className="">
             <TableHeader >
                 <TableRow >
                     <TableHead>ID</TableHead>

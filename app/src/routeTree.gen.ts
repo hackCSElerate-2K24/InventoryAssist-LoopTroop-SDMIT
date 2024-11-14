@@ -13,6 +13,8 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as SuppliersImport } from './routes/suppliers'
 import { Route as SettingImport } from './routes/setting'
+import { Route as RegisterImport } from './routes/register'
+import { Route as LoginImport } from './routes/login'
 import { Route as InventoryImport } from './routes/inventory'
 import { Route as CategoryImport } from './routes/category'
 import { Route as IndexImport } from './routes/index'
@@ -28,6 +30,18 @@ const SuppliersRoute = SuppliersImport.update({
 const SettingRoute = SettingImport.update({
   id: '/setting',
   path: '/setting',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const RegisterRoute = RegisterImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LoginRoute = LoginImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,6 +88,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InventoryImport
       parentRoute: typeof rootRoute
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterImport
+      parentRoute: typeof rootRoute
+    }
     '/setting': {
       id: '/setting'
       path: '/setting'
@@ -97,6 +125,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
   '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
@@ -105,6 +135,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
   '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
@@ -114,16 +146,40 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
   '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/category' | '/inventory' | '/setting' | '/suppliers'
+  fullPaths:
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/login'
+    | '/register'
+    | '/setting'
+    | '/suppliers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/category' | '/inventory' | '/setting' | '/suppliers'
-  id: '__root__' | '/' | '/category' | '/inventory' | '/setting' | '/suppliers'
+  to:
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/login'
+    | '/register'
+    | '/setting'
+    | '/suppliers'
+  id:
+    | '__root__'
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/login'
+    | '/register'
+    | '/setting'
+    | '/suppliers'
   fileRoutesById: FileRoutesById
 }
 
@@ -131,6 +187,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CategoryRoute: typeof CategoryRoute
   InventoryRoute: typeof InventoryRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
   SettingRoute: typeof SettingRoute
   SuppliersRoute: typeof SuppliersRoute
 }
@@ -139,6 +197,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CategoryRoute: CategoryRoute,
   InventoryRoute: InventoryRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
   SettingRoute: SettingRoute,
   SuppliersRoute: SuppliersRoute,
 }
@@ -156,6 +216,8 @@ export const routeTree = rootRoute
         "/",
         "/category",
         "/inventory",
+        "/login",
+        "/register",
         "/setting",
         "/suppliers"
       ]
@@ -168,6 +230,12 @@ export const routeTree = rootRoute
     },
     "/inventory": {
       "filePath": "inventory.tsx"
+    },
+    "/login": {
+      "filePath": "login.tsx"
+    },
+    "/register": {
+      "filePath": "register.tsx"
     },
     "/setting": {
       "filePath": "setting.tsx"

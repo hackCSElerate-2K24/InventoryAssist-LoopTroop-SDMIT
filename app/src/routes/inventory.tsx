@@ -8,6 +8,12 @@ export const Route = createFileRoute('/inventory')({
 
 function RouteComponent() {
   return (
-    <ItemTable></ItemTable>
+    <div className='h-screen w-screen flex flex-row gap-4 bg-orange-100'>
+      <div>
+        Category
+      </div>
+      <ItemTable></ItemTable>
+    </div>
+
   )
 }
