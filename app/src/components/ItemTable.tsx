@@ -26,9 +26,8 @@ function ItemTable() {
         }
     };
 
-    // Fetch items when component mounts
     useEffect(() => {
-        // fetchItems();
+        
     }, []);
 
     return (
