@@ -4,12 +4,6 @@ import useAuthStore from '@/store/authStore';
 import { useEffect } from 'react';
 
 export const Route = createFileRoute('/login')({
-  beforeLoad: async ({ context }) => {
-    // @ts-ignore
-    if (context.auth.userInfo) {
-      throw redirect({ to: "/login" });
-    }
-  },
   component: RouteComponent,
 })
 

@@ -1,28 +1,26 @@
 import * as React from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import BarcodeScanner from '@/components/BarcodeScanner'
-import useAuthStore from '@/store/authStore';
-import { useEffect } from 'react';
+import useAuthStore from '@/store/authStore'
+import { useEffect } from 'react'
 
-
-export const Route = createFileRoute('/setting')({
+export const Route = createFileRoute('/profile')({
   component: RouteComponent,
 })
 
 function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
-
-  const {userInfo} = useAuthStore();
-    const navigate = useNavigate();
-    useEffect(() => {
-      if(!userInfo){
-        navigate({to: '/login'})
-      }
-    }, []);
-    useEffect(() => {
-      if(!userInfo){
-        navigate({to: '/login'})
-      }
-   }, [userInfo]);
+  const { userInfo } = useAuthStore()
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!userInfo) {
+      navigate({ to: '/login' })
+    }
+  }, [])
+  useEffect(() => {
+    if (!userInfo) {
+      navigate({ to: '/login' })
+    }
+  }, [userInfo])
 
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -33,7 +31,10 @@ function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
           <div className="flex-col pr-16">
             <div className="flex-shrink-0 mb-6">
               <img
-                src={photo || "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?t=st=1731610028~exp=1731613628~hmac=169a508c23ac51a91acc89eb1f22bfffa95dc74590e407964e423858b97b6389&w=1060"}
+                src={
+                  photo ||
+                  'https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?t=st=1731610028~exp=1731613628~hmac=169a508c23ac51a91acc89eb1f22bfffa95dc74590e407964e423858b97b6389&w=1060'
+                }
                 alt="Profile"
                 className="w-72 h-w-72 rounded-lg"
               />
@@ -41,8 +42,10 @@ function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
 
             {/* Merchant ID below the Profile Photo */}
             <div className="sm:mt-0 w-full sm:w-auto text-center">
-              <p className="text-lg font-semibold text-gray-700">Merchant ID:</p>
-              <p className="text-lg text-gray-500">{merchantId || "123456"}</p>
+              <p className="text-lg font-semibold text-gray-700">
+                Merchant ID:
+              </p>
+              <p className="text-lg text-gray-500">{merchantId || '123456'}</p>
             </div>
           </div>
 
@@ -53,25 +56,29 @@ function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
           <div className="space-y-4 mt-4 sm:mt-0 w-full sm:w-auto ml-16">
             <div>
               <p className="text-lg font-semibold text-gray-700">ID:</p>
-              <p className="text-lg text-gray-500">{userId || "7890"}</p>
+              <p className="text-lg text-gray-500">{userId || '7890'}</p>
             </div>
             <div>
               <p className="text-lg font-semibold text-gray-700">Name:</p>
-              <p className="text-lg text-gray-500">{name || "John Doe"}</p>
+              <p className="text-lg text-gray-500">{name || 'John Doe'}</p>
             </div>
             <div>
               <p className="text-lg font-semibold text-gray-700">Email:</p>
-              <p className="text-lg text-gray-500">{email || "john.doe@example.com"}</p>
+              <p className="text-lg text-gray-500">
+                {email || 'john.doe@example.com'}
+              </p>
             </div>
             <div>
-              <p className="text-lg font-semibold text-gray-700">Phone Number:</p>
-              <p className="text-lg text-gray-500">{phone || "+1234567890"}</p>
+              <p className="text-lg font-semibold text-gray-700">
+                Phone Number:
+              </p>
+              <p className="text-lg text-gray-500">{phone || '+1234567890'}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default RouteComponent;
+export default RouteComponent

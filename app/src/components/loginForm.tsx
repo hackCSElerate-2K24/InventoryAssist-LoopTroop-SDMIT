@@ -18,7 +18,9 @@ const LoginForm = () => {
     try {
       const user = await authService.login({ email, password });
       setUser(user);
-      navigate({to: '/'})
+      setTimeout(()=>{
+        navigate({to: '/'})
+      }, 500)
       console.log("Login successful!", user);
     } catch (err) {
       setError("Invalid email or password.");
@@ -39,11 +41,11 @@ const LoginForm = () => {
         <div className="mb-4">
           <div className="flex justify-center items-center mb-2">
             <Label className="text-gray-700">Password</Label>
-            <Button variant="link" className="text-black ml-auto p-1 h-auto italic">
+            {/* <Button variant="link" className="text-black ml-auto p-1 h-auto italic">
               <Link href="/forgot-password" className="text-black-600 p-0">
                 forgot password?
               </Link>
-            </Button>
+            </Button> */}
           </div>
           <Input
             type="password"
