@@ -16,6 +16,8 @@ import { Button } from "./ui/button";
 import useAuthStore from "../store/authStore";
 import authService from "@/appwrite/auth.ts"; // Import the store
 import logo from '../assets/inventoryAssist.png'
+import allSuppliers from "@/routes/allSuppliers"
+import profile from '../assets/profile.png'
 
 
 const items = [
@@ -36,13 +38,14 @@ const items = [
   },
   {
     title: "Suppliers",
-    url: "/suppliers",
-    icons: supplier,
+    url: "/allSuppliers",
+    icons:supplier
+    
   },
   {
     title: "Profile",
-    url: "/profile",
-    icons: gear,
+    url: "/setting",
+    icons: profile,
   },
 ];
 

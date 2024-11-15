@@ -5,6 +5,7 @@ import InventorySummary from '@/components/inventorySmmary'
 import TopSellingItems from '@/components/topSellingItems'
 import {useEffect} from "react";
 import useAuthStore from "@/store/authStore.ts";
+import BarcodeScannerComponent from '@/components/BarcodeScannerComponent'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -42,24 +43,10 @@ function RouteComponent() {
         <TopSellingItems />
       </div>
     </div>
-    {/* <div className='h-auto w-screen grid sm:grid-rows-[1fr_3fr_1fr]  grid-cols-1 mt-16 bg-green-200'>
-      <div className=''>
-        <StockUpdateCard/>
-      </div>
-      <div className='grid sm:grid-cols-2 grid-cols-1'>
-        <div className='px-8'>
-            <p className=" text-3xl font-bold text-black">Overview</p>
-          <Chart />
-        </div>
-        <div>
-          <InventorySummary />
-        </div>
-      </div>
-      <div>
-        <TopSellingItems />
-      </div>
-    </div> */}
+    
 
+    <BarcodeScannerComponent />
+      
     </>
   )
 }

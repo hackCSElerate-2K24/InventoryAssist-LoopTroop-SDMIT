@@ -12,12 +12,14 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SuppliersImport } from './routes/suppliers'
+import { Route as SuccessPageImport } from './routes/successPage'
 import { Route as RegisterImport } from './routes/register'
 import { Route as ProfileImport } from './routes/profile'
 import { Route as OrderSupplierImport } from './routes/orderSupplier'
 import { Route as LoginImport } from './routes/login'
 import { Route as InventoryImport } from './routes/inventory'
 import { Route as CategoryImport } from './routes/category'
+import { Route as AllSuppliersImport } from './routes/allSuppliers'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -25,6 +27,12 @@ import { Route as IndexImport } from './routes/index'
 const SuppliersRoute = SuppliersImport.update({
   id: '/suppliers',
   path: '/suppliers',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SuccessPageRoute = SuccessPageImport.update({
+  id: '/successPage',
+  path: '/successPage',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -64,6 +72,12 @@ const CategoryRoute = CategoryImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const AllSuppliersRoute = AllSuppliersImport.update({
+  id: '/allSuppliers',
+  path: '/allSuppliers',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
@@ -79,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/allSuppliers': {
+      id: '/allSuppliers'
+      path: '/allSuppliers'
+      fullPath: '/allSuppliers'
+      preLoaderRoute: typeof AllSuppliersImport
       parentRoute: typeof rootRoute
     }
     '/category': {
@@ -123,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterImport
       parentRoute: typeof rootRoute
     }
+    '/successPage': {
+      id: '/successPage'
+      path: '/successPage'
+      fullPath: '/successPage'
+      preLoaderRoute: typeof SuccessPageImport
+      parentRoute: typeof rootRoute
+    }
     '/suppliers': {
       id: '/suppliers'
       path: '/suppliers'
@@ -137,35 +165,41 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/allSuppliers': typeof AllSuppliersRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
   '/login': typeof LoginRoute
   '/orderSupplier': typeof OrderSupplierRoute
   '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/successPage': typeof SuccessPageRoute
   '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/allSuppliers': typeof AllSuppliersRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
   '/login': typeof LoginRoute
   '/orderSupplier': typeof OrderSupplierRoute
   '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/successPage': typeof SuccessPageRoute
   '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/allSuppliers': typeof AllSuppliersRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
   '/login': typeof LoginRoute
   '/orderSupplier': typeof OrderSupplierRoute
   '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/successPage': typeof SuccessPageRoute
   '/suppliers': typeof SuppliersRoute
 }
 
@@ -173,55 +207,65 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/allSuppliers'
     | '/category'
     | '/inventory'
     | '/login'
     | '/orderSupplier'
     | '/profile'
     | '/register'
+    | '/successPage'
     | '/suppliers'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/allSuppliers'
     | '/category'
     | '/inventory'
     | '/login'
     | '/orderSupplier'
     | '/profile'
     | '/register'
+    | '/successPage'
     | '/suppliers'
   id:
     | '__root__'
     | '/'
+    | '/allSuppliers'
     | '/category'
     | '/inventory'
     | '/login'
     | '/orderSupplier'
     | '/profile'
     | '/register'
+    | '/successPage'
     | '/suppliers'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AllSuppliersRoute: typeof AllSuppliersRoute
   CategoryRoute: typeof CategoryRoute
   InventoryRoute: typeof InventoryRoute
   LoginRoute: typeof LoginRoute
   OrderSupplierRoute: typeof OrderSupplierRoute
   ProfileRoute: typeof ProfileRoute
   RegisterRoute: typeof RegisterRoute
+  SuccessPageRoute: typeof SuccessPageRoute
   SuppliersRoute: typeof SuppliersRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AllSuppliersRoute: AllSuppliersRoute,
   CategoryRoute: CategoryRoute,
   InventoryRoute: InventoryRoute,
   LoginRoute: LoginRoute,
   OrderSupplierRoute: OrderSupplierRoute,
   ProfileRoute: ProfileRoute,
   RegisterRoute: RegisterRoute,
+  SuccessPageRoute: SuccessPageRoute,
   SuppliersRoute: SuppliersRoute,
 }
 
@@ -236,17 +280,22 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/allSuppliers",
         "/category",
         "/inventory",
         "/login",
         "/orderSupplier",
         "/profile",
         "/register",
+        "/successPage",
         "/suppliers"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/allSuppliers": {
+      "filePath": "allSuppliers.tsx"
     },
     "/category": {
       "filePath": "category.tsx"
@@ -265,6 +314,9 @@ export const routeTree = rootRoute
     },
     "/register": {
       "filePath": "register.tsx"
+    },
+    "/successPage": {
+      "filePath": "successPage.tsx"
     },
     "/suppliers": {
       "filePath": "suppliers.tsx"
