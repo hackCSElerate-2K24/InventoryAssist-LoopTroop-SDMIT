@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4194a73a-c4ac-46e6-8ddb-98112e19e202" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/components/Auth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/conf/conf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/router.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/authStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/appwrite/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/loginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/__root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/routes/category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/category.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/routes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/routes/inventory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/inventory.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/routes/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/login.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="vishruthaFrontend" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;srujan-j24&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hackCSElerate-2K24/InventoryAssist-LoopTroop-SDMIT.git&quot;,
+    &quot;accountId&quot;: &quot;241a4846-41a1-466d-8269-996a6b15ff79&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oql19xtr3ldeAgJ81MMm3gHYRC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vishruthaFrontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sruja/Documents/GitHub/InventoryAssist-LoopTroop-SDMIT&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\sruja\\Documents\\GitHub\\InventoryAssist-LoopTroop-SDMIT\\app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.22855.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4194a73a-c4ac-46e6-8ddb-98112e19e202" name="Changes" comment="" />
+      <created>1731604768506</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731604768506</updated>
+      <workItem from="1731604769576" duration="3609000" />
+      <workItem from="1731610377731" duration="364000" />
+      <workItem from="1731611168831" duration="7183000" />
+      <workItem from="1731621991022" duration="727000" />
+      <workItem from="1731623264941" duration="306000" />
+      <workItem from="1731628111530" duration="1704000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
