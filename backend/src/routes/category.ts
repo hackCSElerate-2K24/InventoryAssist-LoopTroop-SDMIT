@@ -22,4 +22,6 @@ categoryRoute.get('/all', async (c) => {
 
 
 
+
+
 export default categoryRoute;

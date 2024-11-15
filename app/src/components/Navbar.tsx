@@ -44,7 +44,7 @@ const items = [
   },
   {
     title: "Profile",
-    url: "/setting",
+    url: "/profile",
     icons: profile,
   },
 ];

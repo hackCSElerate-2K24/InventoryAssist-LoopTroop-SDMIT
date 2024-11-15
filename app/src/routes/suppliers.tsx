@@ -38,14 +38,14 @@ function RouteComponent() {
   const items = new URLSearchParams(window.location.search).get('items')?.split(',');
 
   return (
-    <div className="mt-14 min-h-screen flex flex-col items-center justify-center bg-gray-100 p-10 space-y-10">
+    <div className="mt-14 min-h-screen flex flex-col items-center justify-center bg-gray-100  space-y-10 p-0!" style={{padding: 0}}>
       {suppliers
         .filter((supplier) => supplier.category === category) // Filter suppliers based on selected category
         .map((supplier, index) => (
           <div
             key={index}
             id={`supplier-${index}`} // Unique ID for each supplier
-            className="w-3/4 bg-white shadow-md rounded-lg border border-gray-300 p-6 flex flex-col space-y-4" // flex-col layout for vertical stacking
+            className="w-3/4 bg-white shadow-md rounded-lg border border-gray-300  flex flex-col space-y-4" // flex-col layout for vertical stacking
           >
             <div className="grid grid-cols-2 gap-4">
               <div>

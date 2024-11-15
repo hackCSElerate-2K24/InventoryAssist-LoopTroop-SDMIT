@@ -22,7 +22,7 @@ function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
   }, [userInfo])
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-4 px-6 sm:px-10">
+    <div className="min-h-screen flex items-center justify-center py-20 px-6 sm:px-10">
       <div className="w-full max-w-4xl p-6 sm:p-8 bg-white shadow-md rounded-lg border border-black flex flex-col sm:flex-row justify-center">
         {/* Container for Profile Image and Details */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6 sm:mb-0">
@@ -61,7 +61,7 @@ function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
           </div>
           <div>
             <p className="text-lg font-semibold text-gray-700">Phone Number:</p>
-            <p className="text-lg text-gray-500">{phone || "+1234567890"}</p>
+            <p className="text-lg text-gray-500">{phone || "+91 7483392437"}</p>
           </div>
         </div>
       </div>
