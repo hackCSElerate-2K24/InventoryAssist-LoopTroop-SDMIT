@@ -39,7 +39,8 @@ const chartConfig = {
 export function Chart() {
   return (
     <>
-    <div className="max-w-full sm:mx-auto sm:px-6 lg:px-8">
+    <div className="pl-16">
+    <div className="max-w-full sm:mx-auto sm:px-6 sm:pr-0 lg:px-8 lg:pr-0">
         <div className="sm:flex sm:space-x-4">
             {/* Card with flexible height */}
             <Card className="w-full border-black border-[1px]">
@@ -69,7 +70,10 @@ export function Chart() {
                 </CardContent>
             </Card>
 
+        {/* Dividing Line */}
+        <div className="border-l border-black"></div>
         </div>
+    </div>
     </div>
     </>
   )

@@ -12,26 +12,29 @@ function InventorySummary() {
     ];
 
     return (
-        <div className="max-w-full mx-4 py-6 sm:mx-auto sm:px-6 lg:px-8">
-            <div className="sm:flex sm:space-x-4">
-                <div className="w-full flex flex-col mt-8 space-y-4">
-                    <div className="bg-white rounded-lg text-left overflow-hidden transition-all w-full textRight">
-                        <div className="bg-white p-5">
-                            <p className="text-3xl font-bold text-black">Top Selling Items</p>
-                        </div>
-                    </div>
-
-                    {/* 3x3 Grid for Top Selling Items */}
-                    <div className="grid grid-cols-3 gap-4">
-                        {topSellingItems.map((item) => (
-                            <div
-                                key={item.id}
-                                className="bg-white rounded-lg shadow-md p-4  border-black border-[1px] text-center"
-                            >
-                                <p className="text-xl font-bold text-black">{item.name}</p>
-                                <p className="text-md text-gray-500">{item.value}</p>
+        
+        <div className="px-16">
+            <div className="max-w-full mx-4 py-6 sm:mx-auto sm:px-6 lg:px-8">
+                <div className="sm:flex sm:space-x-4">
+                    <div className="w-full flex flex-col mt-8 space-y-4">
+                        <div className="bg-white rounded-lg text-left overflow-hidden transition-all w-full textRight">
+                            <div className="bg-white p-5">
+                                <p className="text-3xl font-bold text-black">Top Selling Items</p>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* 3x3 Grid for Top Selling Items */}
+                        <div className="grid grid-cols-3 gap-4">
+                            {topSellingItems.map((item) => (
+                                <div
+                                    key={item.id}
+                                    className="bg-white rounded-lg shadow-md p-4  border-black border-[1px] text-center hover:drop-shadow-xl"
+                                >
+                                    <p className="text-xl font-bold text-black">{item.name}</p>
+                                    <p className="text-md text-gray-500">{item.value}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
