@@ -22,11 +22,13 @@ const {userInfo} = useAuthStore();
  
 function RouteComponent() {
   return (
-    <div className='h-screen w-screen flex flex-row gap-4 bg-orange-100'>
-      <div>
-        Category
+    <div className='h-screen w-screen flex flex-row gap-4  p-16 pb-0'>
+      <div className="h-full w-full bg-blue-200 ">
+
       </div>
-      <ItemTable></ItemTable>
+      {/*<div> Category*/}
+      {/*</div>*/}
+      {/*<ItemTable></ItemTable>*/}
     </div>
 
   )

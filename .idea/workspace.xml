@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4194a73a-c4ac-46e6-8ddb-98112e19e202" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/components/Auth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/conf/conf.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/router.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/store/authStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/appwrite/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/loginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/routes/__root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/__root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/routes/category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/category.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/Appwrite/appwrite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/routes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/routes/inventory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/inventory.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/routes/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/db/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/user.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vishruthaFrontend&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sruja/Documents/GitHub/InventoryAssist-LoopTroop-SDMIT&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -112,7 +105,7 @@
       <workItem from="1731611168831" duration="7183000" />
       <workItem from="1731621991022" duration="727000" />
       <workItem from="1731623264941" duration="306000" />
-      <workItem from="1731628111530" duration="1704000" />
+      <workItem from="1731628111530" duration="3620000" />
     </task>
     <servers />
   </component>
