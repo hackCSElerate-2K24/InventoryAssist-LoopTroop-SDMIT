@@ -1,37 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { BarcodeScanner } from 'react-barcode-scanner'; // Import the scanner
-import 'react-barcode-scanner/polyfill'; // Polyfill for barcode scanning
+import BarcodeScanner from 'react-qr-barcode-scanner';  // Corrected import
 
 const BarcodeScannerComponent = () => {
-    const [barcode, setBarcode] = useState<string | null>(null);
+  const [barcode, setBarcode] = useState<string | null>("Not Scanned");
 
-    // Callback function when barcode is detected
-    const handleScan = (data: string) => {
-        if (data) {
-        setBarcode(data); // Update the barcode data
-        }
-    };
+  const handleScan = (err: any, result: any) => {
+    if (result) {
+      setBarcode(result.text);
+        // Set the barcode data if scanned
+    } else {
+      setBarcode("Not Scanned");  // Handle when no barcode is scanned
+    }
+  };
+  useEffect(()=>{
+    console.log(barcode)
+  },[barcode, setBarcode])
 
-    useEffect(()=>{
-        console.log(barcode);
-    },[barcode])
-
-    return (
-        <div className="w-96 h-96">
-        <h2>Barcode Scanner</h2>
-        {/* Use the BarcodeScanner component */}
-        <BarcodeScanner
-            onDetected={handleScan}  // Event handler when barcode is detected
-        />
-        <div>
-            {barcode ? (
-            <p>Scanned Barcode: {barcode}</p>
-            ) : (
-            <p>No barcode scanned yet.</p>
-            )}
-        </div>
-        </div>
-    );
+  return (
+    <div className="w-96">
+      <h2>Barcode Scanner</h2>
+      <div>
+        <p>{barcode}</p>
+      </div>
+      <BarcodeScanner
+        width={500}
+        height={500}
+        onUpdate={handleScan}  // Handle barcode scan results
+      />
+    </div>
+  );
 };
 
 export default BarcodeScannerComponent;
