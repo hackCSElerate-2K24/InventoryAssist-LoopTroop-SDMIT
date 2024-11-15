@@ -10,6 +10,7 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
@@ -22,12 +23,14 @@
     "clsx": "^2.1.1",
     "instascan": "^1.0.0",
     "jsbarcode": "^3.11.6",
+    "jsqr": "^1.4.0",
     "lucide-react": "^0.456.0",
     "react": "^18.3.1",
     "react-barcode-scanner": "^3.0.1",
     "react-dom": "^18.3.1",
     "react-qr-barcode-scanner": "^2.0.0",
     "react-router-dom": "^6.28.0",
+    "react-webcam": "^7.2.0",
     "recharts": "^2.13.3",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
