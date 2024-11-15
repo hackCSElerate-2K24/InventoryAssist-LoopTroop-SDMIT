@@ -12,6 +12,7 @@ app.get('/', (c) => {
 app.use(logger())
 
 app.route('/category', categoryRoute)
+app.route('/product', productRoute)
 
 app.route('/product',productRoute)
 

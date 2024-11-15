@@ -16,6 +16,6 @@ const createAppwriteClient = () => {
 
     return { client, databases }; 
 };
-
+    
 export const { client, databases } = createAppwriteClient();
 

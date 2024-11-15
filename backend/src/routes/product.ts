@@ -2,18 +2,11 @@ import { Hono } from "hono";
 import { client, databases } from "../Appwrite/appwrite";
 
 const productRoute = new Hono();
-
-productRoute.get('/all/:categoryId', async (c) => {
-    const categoryId = c.req.param('categoryId');  // Get the categoryId path parameter
-    console.log(categoryId);
-    if (!categoryId) {
-        return c.json({ error: 'Category ID is required' }, 400);
-    }
-
+productRoute.get('/all', async (c) => {
     try {
         const response = await databases.listDocuments(
             String(process.env.APPWRITE_DB), 
-            String(process.env.APPWRITE_PRODUCT)
+            String(process.env.APPWRITE_PRODUCT), 
         );
 
         if (response.documents.length === 0) {
@@ -41,7 +34,42 @@ productRoute.get('/all/:categoryId', async (c) => {
 
         return c.json(productsByCategory);
     } catch (error) {
+        console.log(error);
         return c.json({ error: 'Unable to fetch products' }, 500);
+    }
+});
+
+
+productRoute.get('/stock-status', async (c) => {
+    try {
+        const response = await databases.listDocuments(
+            String(process.env.APPWRITE_DB), 
+            String(process.env.APPWRITE_PRODUCT), 
+        );
+
+        if (response.documents.length === 0) {
+            return c.json({ message: 'No products found' }, 404);
+        }
+
+        // Calculate stock status
+        const stockStatus = response.documents.reduce((acc, product) => {
+            const stock = product.quantity ?? 0;
+
+            if (stock === 0) {
+                acc.outOfStock += 1;
+            } else if (stock < 10) {
+                acc.lowStock += 1;
+            } else {
+                acc.inStock += 1;
+            }
+
+            return acc;
+        }, { inStock: 0, outOfStock: 0, lowStock: 0 });
+
+        return c.json(stockStatus);
+    } catch (error) {
+        console.log(error);
+        return c.json({ error: 'Unable to fetch stock status' }, 500);
     }
 });
 

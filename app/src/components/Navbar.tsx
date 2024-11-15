@@ -52,7 +52,7 @@ function Navbar() {
   const clearUser = useAuthStore((state) => state.clearUser);
 
   return (
-    <div className="px-8 bg-white border-b-2 h-16 flex items-center justify-between fixed top-0 left-0 w-screen">
+    <div className="px-4 sm:px-16 bg-white z-50 border-b-2 h-16 flex items-center justify-between fixed top-0 left-0 w-screen">
             <a href="/">
               <div className="h-10 flex items-center ">
                 <img

@@ -1,9 +1,35 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 function StockUpdateCard() {
+        const [stockStatus, setStockStatus] = useState({
+        inStock: 0,
+        outOfStock: 0,
+        lowStock: 0,
+    });
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchStockStatus = async () => {
+            try {
+                const response = await axios.get('api/product/stock-status'); // Replace with your backend URL
+                setStockStatus(response.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching stock status:', error);
+                setError('Unable to fetch stock status');
+                setLoading(false);
+            }
+        };
+
+        fetchStockStatus();
+    }, []);
     return (
         <>
-        <div className="px-16">
-            <div className="text-left overflow-hidden transition-all w-full mt-8 ml-4">
-                <div className="bg-white p-5 pb-0">
+        <div className="">
+            <div className="text-left overflow-hidden transition-all w-full sm:px-8 px-6">
+                <div className="bg-white  pb-0 my-4">
                     <p className="text-3xl font-bold text-black">Key Updates</p>
                 </div>
             </div>
@@ -14,7 +40,7 @@ function StockUpdateCard() {
                             <div className="sm:flex sm:items-start">
                                 <div className="text-center sm:mt-0 sm:ml-2 sm:text-left">
                                     <h3 className="text-sm leading-6 font-medium text-gray-400">in-stock</h3>
-                                    <p className="text-3xl font-bold text-black">81</p>
+                                    <p className="text-3xl font-bold text-black">{stockStatus.inStock}</p>
                                 </div>
                             </div>
                         </div>
@@ -24,7 +50,7 @@ function StockUpdateCard() {
                             <div className="sm:flex sm:items-start">
                                 <div className="text-center sm:mt-0 sm:ml-2 sm:text-left">
                                     <h3 className="text-sm leading-6 font-medium text-gray-400">out of stock</h3>
-                                    <p className="text-3xl font-bold text-black">10</p>
+                                    <p className="text-3xl font-bold text-black">{stockStatus.outOfStock}</p>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +60,7 @@ function StockUpdateCard() {
                             <div className="sm:flex sm:items-start">
                                 <div className="text-center sm:mt-0 sm:ml-2 sm:text-left">
                                     <h3 className="text-sm leading-6 font-medium text-gray-400">low stock</h3>
-                                    <p className="text-3xl font-bold text-black">9</p>
+                                    <p className="text-3xl font-bold text-black">{stockStatus.lowStock}</p>
                                 </div>
                             </div>
                         </div>

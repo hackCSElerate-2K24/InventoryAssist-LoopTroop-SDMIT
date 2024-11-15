@@ -27,15 +27,28 @@ function RouteComponent() {
   }, [userInfo]);
   return (
     <>
-    <div className='h-screen w-screen grid grid-rows-[1fr_3fr_1fr] mt-16'>
-      <div>
-      <StockUpdateCard/>
+    <div className='grid  px-8 min-h-screen w-full mt-16 grid-cols-1'>
+      <div className='bg-white '>
+        <StockUpdateCard/>
       </div>
-      <div className="bg-white lg:mt-14 sm:mt-0 lg:mx-24 lg:mb-8 sm:mx-24 sm:mb-4">
-        <p className="text-3xl font-bold text-black">Overview</p>
-      </div>
-      <div className='grid grid-cols-2'>
+      <div className='col-span-2 grid sm:grid-cols-2 grid-col-1'>
         <div>
+          <h1 className='text-3xl font-bold m-2'>Overview</h1>
+        <Chart />
+        </div>
+        <InventorySummary />
+      </div>
+      <div>
+        <TopSellingItems />
+      </div>
+    </div>
+    {/* <div className='h-auto w-screen grid sm:grid-rows-[1fr_3fr_1fr]  grid-cols-1 mt-16 bg-green-200'>
+      <div className=''>
+        <StockUpdateCard/>
+      </div>
+      <div className='grid sm:grid-cols-2 grid-cols-1'>
+        <div className='px-8'>
+            <p className=" text-3xl font-bold text-black">Overview</p>
           <Chart />
         </div>
         <div>
@@ -45,7 +58,7 @@ function RouteComponent() {
       <div>
         <TopSellingItems />
       </div>
-    </div>
+    </div> */}
 
     </>
   )

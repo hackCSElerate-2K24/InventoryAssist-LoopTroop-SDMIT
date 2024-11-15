@@ -25,7 +25,7 @@ function InventorySummary() {
         .sort((a, b) => a.rank - b.rank); // Sort items by rank
 
     return (
-        <div className="px-16">
+        <div className="">
             <div className="max-w-full mx-4 py-6 sm:mx-auto sm:px-6 lg:px-8">
                 <div className="sm:flex sm:space-x-4">
                     <div className="w-full flex flex-col mt-8 space-y-4">
@@ -45,7 +45,7 @@ function InventorySummary() {
                         </div>
 
                         {/* 3x3 Grid for Top Selling Items */}
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                             {sortedItems.map((item) => (
                                 <div
                                     key={item.id}

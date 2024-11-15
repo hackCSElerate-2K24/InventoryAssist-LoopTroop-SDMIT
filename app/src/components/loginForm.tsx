@@ -30,7 +30,7 @@ const LoginForm = () => {
 
   return (
     <div className="h-screen flex items-center justify-center">
-      <form className="w-1/6" onSubmit={login}>
+      <form className="w-80" onSubmit={login}>
         <h1 className="text-3xl font-bold mb-8 text-primary">Login</h1>
 
         <div className="mb-4">
@@ -39,13 +39,8 @@ const LoginForm = () => {
         </div>
 
         <div className="mb-4">
-          <div className="flex justify-center items-center mb-2">
+          <div className="flex  items-center mb-2">
             <Label className="text-gray-700">Password</Label>
-            {/* <Button variant="link" className="text-black ml-auto p-1 h-auto italic">
-              <Link href="/forgot-password" className="text-black-600 p-0">
-                forgot password?
-              </Link>
-            </Button> */}
           </div>
           <Input
             type="password"

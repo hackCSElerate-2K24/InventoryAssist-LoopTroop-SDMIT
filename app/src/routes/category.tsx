@@ -51,7 +51,6 @@ function RouteComponent() {
             </div>
           </div>
 
-          {/* Dividing Line */}
           <div className="mx-8 border-l border-gray-300"></div>
 
           {/* Order Button linking to Suppliers Route */}
