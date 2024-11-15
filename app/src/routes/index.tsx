@@ -4,6 +4,7 @@ import StockUpdateCard from '@/components/stock-update-card'
 import { Chart } from '@/components/chart'
 import InventorySummary from '@/components/inventorySmmary'
 import TopSellingItems from '@/components/topSellingItems'
+import BarcodeScannerComponent from '@/components/BarcodeScannerComponent'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -32,6 +33,7 @@ function RouteComponent() {
         <TopSellingItems />
       </div>
     </div>
+    <BarcodeScannerComponent />
       
     </>
   )

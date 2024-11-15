@@ -14,6 +14,8 @@ import home from "../assets/home.png"
 import { useRef } from "react"
 import { Button } from "./ui/button"
 import logo from '../assets/inventoryAssist.png'
+import allSuppliers from "@/routes/allSuppliers"
+import profile from '../assets/profile.png'
 
 
 const items = [
@@ -34,14 +36,14 @@ const items = [
   },
   {
     title: "Suppliers",
-    url: "/suppliers",
+    url: "/allSuppliers",
     icons:supplier
     
   },
   {
-    title: "Settings",
+    title: "Profile",
     url: "/setting",
-    icons: gear,
+    icons: profile,
   },
 ]
 
