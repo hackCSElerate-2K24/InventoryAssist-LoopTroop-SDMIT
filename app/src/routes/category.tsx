@@ -7,7 +7,11 @@ export const Route = createFileRoute('/category')({
   component: RouteComponent,
 })
 
-const {userInfo} = useAuthStore();
+
+
+
+function RouteComponent() {
+  const {userInfo} = useAuthStore();
   const navigate = useNavigate();
   useEffect(() => {
     if(!userInfo){
@@ -19,9 +23,5 @@ const {userInfo} = useAuthStore();
       navigate({to: '/login'})
     }
   }, [userInfo]);
-
-
-
-function RouteComponent() {
   return 'Hello /category!'
 }

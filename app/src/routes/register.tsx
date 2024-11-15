@@ -8,20 +8,21 @@ export const Route = createFileRoute('/register')({
   component: RouteComponent,
 })
 
-const {userInfo} = useAuthStore();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if(userInfo){
-      navigate({to: '/login'})
-    }
-  }, []);
-  useEffect(() => {
-    if(userInfo){
-      navigate({to: '/login'})
-    }
-  }, [userInfo]);
 
 function RouteComponent() {
+
+  const {userInfo} = useAuthStore();
+    const navigate = useNavigate();
+    useEffect(() => {
+      if(userInfo){
+        navigate({to: '/login'})
+      }
+    }, []);
+    useEffect(() => {
+      if(userInfo){
+        navigate({to: '/login'})
+      }
+  }, [userInfo]);
   return (
     <div className='h-screen grid'>
       

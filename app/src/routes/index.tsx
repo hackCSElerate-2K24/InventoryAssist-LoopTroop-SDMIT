@@ -11,18 +11,6 @@ export const Route = createFileRoute('/')({
 })
 
 
-const {userInfo} = useAuthStore();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if(!userInfo){
-      navigate({to: '/login'})
-    }
-  }, []);
-  useEffect(() => {
-    if(!userInfo){
-      navigate({to: '/login'})
-    }
-  }, [userInfo]);
 
 function RouteComponent() {
   const {userInfo} = useAuthStore();

@@ -9,20 +9,21 @@ export const Route = createFileRoute('/setting')({
   component: RouteComponent,
 })
 
-const {userInfo} = useAuthStore();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if(!userInfo){
-      navigate({to: '/login'})
-    }
-  }, []);
-  useEffect(() => {
-    if(!userInfo){
-      navigate({to: '/login'})
-    }
-  }, [userInfo]);
-
 function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
+
+  const {userInfo} = useAuthStore();
+    const navigate = useNavigate();
+    useEffect(() => {
+      if(!userInfo){
+        navigate({to: '/login'})
+      }
+    }, []);
+    useEffect(() => {
+      if(!userInfo){
+        navigate({to: '/login'})
+      }
+   }, [userInfo]);
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="w-1/2 p-16 bg-white shadow-md rounded-lg border border-black flex justify-center">

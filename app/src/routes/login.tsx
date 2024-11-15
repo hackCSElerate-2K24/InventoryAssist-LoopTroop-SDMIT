@@ -13,7 +13,10 @@ export const Route = createFileRoute('/login')({
   component: RouteComponent,
 })
 
-const {userInfo} = useAuthStore();
+
+function RouteComponent() {
+
+  const {userInfo} = useAuthStore();
   const navigate = useNavigate();
   useEffect(() => {
     if(userInfo){
@@ -24,9 +27,7 @@ const {userInfo} = useAuthStore();
     if(userInfo){
       navigate({to: '/login'})
     }
-  }, [userInfo]);
-
-function RouteComponent() {
+  },[userInfo]);
   return (
     <LoginForm></LoginForm>
   )
