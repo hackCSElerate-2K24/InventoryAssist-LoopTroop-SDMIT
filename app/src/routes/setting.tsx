@@ -1,10 +1,26 @@
 import * as React from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import BarcodeScanner from '@/components/BarcodeScanner'
+import useAuthStore from '@/store/authStore';
+import { useEffect } from 'react';
+
 
 export const Route = createFileRoute('/setting')({
   component: RouteComponent,
 })
+
+const {userInfo} = useAuthStore();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(!userInfo){
+      navigate({to: '/login'})
+    }
+  }, []);
+  useEffect(() => {
+    if(!userInfo){
+      navigate({to: '/login'})
+    }
+  }, [userInfo]);
 
 function RouteComponent({ photo, merchantId, userId, name, email, phone }) {
   return (

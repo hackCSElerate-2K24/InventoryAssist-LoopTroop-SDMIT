@@ -1,5 +1,7 @@
-import {createFileRoute, redirect} from '@tanstack/react-router'
+import {createFileRoute, redirect, useNavigate} from '@tanstack/react-router'
 import LoginForm from '@/components/loginForm'
+import useAuthStore from '@/store/authStore';
+import { useEffect } from 'react';
 
 export const Route = createFileRoute('/login')({
   beforeLoad: async ({ context }) => {
@@ -10,6 +12,19 @@ export const Route = createFileRoute('/login')({
   },
   component: RouteComponent,
 })
+
+const {userInfo} = useAuthStore();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(userInfo){
+      navigate({to: '/login'})
+    }
+  }, []);
+  useEffect(() => {
+    if(userInfo){
+      navigate({to: '/login'})
+    }
+  }, [userInfo]);
 
 function RouteComponent() {
   return (

@@ -1,10 +1,25 @@
 import * as React from 'react'
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import RegisterPage from '@/components/registerFrom'
+import useAuthStore from '@/store/authStore';
+import { useEffect } from 'react';
 
 export const Route = createFileRoute('/register')({
   component: RouteComponent,
 })
+
+const {userInfo} = useAuthStore();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(userInfo){
+      navigate({to: '/login'})
+    }
+  }, []);
+  useEffect(() => {
+    if(userInfo){
+      navigate({to: '/login'})
+    }
+  }, [userInfo]);
 
 function RouteComponent() {
   return (

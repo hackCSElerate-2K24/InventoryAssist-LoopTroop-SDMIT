@@ -1,14 +1,30 @@
 import * as React from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import StockUpdateCard from '@/components/stock-update-card'
 import { Chart } from '@/components/chart'
 import InventorySummary from '@/components/inventorySmmary'
 import TopSellingItems from '@/components/topSellingItems'
+import useAuthStore from '@/store/authStore'
+import { useEffect } from 'react';
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
 })
 
+
+const {userInfo} = useAuthStore();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(!userInfo){
+      navigate({to: '/login'})
+    }
+  }, []);
+  useEffect(() => {
+    if(!userInfo){
+      navigate({to: '/login'})
+    }
+  }, [userInfo]);
+ 
 function RouteComponent() {
 
   return (
