@@ -39,10 +39,10 @@ const chartConfig = {
 export function Chart() {
   return (
     <>
-    <div className="max-w-full mx-4 py-6 sm:mx-auto sm:px-6 lg:px-8">
+    <div className="max-w-full sm:mx-auto sm:px-6 lg:px-8">
         <div className="sm:flex sm:space-x-4">
             {/* Card with flexible height */}
-            <Card className="m-8 w-full border-black border-[1px]">
+            <Card className="w-full border-black border-[1px]">
               <CardHeader>
                 <CardTitle>Sales order and Sales amount per month</CardTitle>
                 <CardDescription>January - June 2024</CardDescription>

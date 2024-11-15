@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as SuppliersImport } from './routes/suppliers'
 import { Route as SettingImport } from './routes/setting'
+import { Route as OrderSupplierImport } from './routes/orderSupplier'
 import { Route as InventoryImport } from './routes/inventory'
 import { Route as CategoryImport } from './routes/category'
 import { Route as IndexImport } from './routes/index'
@@ -28,6 +29,12 @@ const SuppliersRoute = SuppliersImport.update({
 const SettingRoute = SettingImport.update({
   id: '/setting',
   path: '/setting',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const OrderSupplierRoute = OrderSupplierImport.update({
+  id: '/orderSupplier',
+  path: '/orderSupplier',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,6 +81,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InventoryImport
       parentRoute: typeof rootRoute
     }
+    '/orderSupplier': {
+      id: '/orderSupplier'
+      path: '/orderSupplier'
+      fullPath: '/orderSupplier'
+      preLoaderRoute: typeof OrderSupplierImport
+      parentRoute: typeof rootRoute
+    }
     '/setting': {
       id: '/setting'
       path: '/setting'
@@ -97,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
+  '/orderSupplier': typeof OrderSupplierRoute
   '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
@@ -105,6 +120,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
+  '/orderSupplier': typeof OrderSupplierRoute
   '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
@@ -114,16 +130,36 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
+  '/orderSupplier': typeof OrderSupplierRoute
   '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/category' | '/inventory' | '/setting' | '/suppliers'
+  fullPaths:
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/orderSupplier'
+    | '/setting'
+    | '/suppliers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/category' | '/inventory' | '/setting' | '/suppliers'
-  id: '__root__' | '/' | '/category' | '/inventory' | '/setting' | '/suppliers'
+  to:
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/orderSupplier'
+    | '/setting'
+    | '/suppliers'
+  id:
+    | '__root__'
+    | '/'
+    | '/category'
+    | '/inventory'
+    | '/orderSupplier'
+    | '/setting'
+    | '/suppliers'
   fileRoutesById: FileRoutesById
 }
 
@@ -131,6 +167,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CategoryRoute: typeof CategoryRoute
   InventoryRoute: typeof InventoryRoute
+  OrderSupplierRoute: typeof OrderSupplierRoute
   SettingRoute: typeof SettingRoute
   SuppliersRoute: typeof SuppliersRoute
 }
@@ -139,6 +176,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CategoryRoute: CategoryRoute,
   InventoryRoute: InventoryRoute,
+  OrderSupplierRoute: OrderSupplierRoute,
   SettingRoute: SettingRoute,
   SuppliersRoute: SuppliersRoute,
 }
@@ -156,6 +194,7 @@ export const routeTree = rootRoute
         "/",
         "/category",
         "/inventory",
+        "/orderSupplier",
         "/setting",
         "/suppliers"
       ]
@@ -168,6 +207,9 @@ export const routeTree = rootRoute
     },
     "/inventory": {
       "filePath": "inventory.tsx"
+    },
+    "/orderSupplier": {
+      "filePath": "orderSupplier.tsx"
     },
     "/setting": {
       "filePath": "setting.tsx"

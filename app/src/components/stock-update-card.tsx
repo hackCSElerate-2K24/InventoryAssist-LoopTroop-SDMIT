@@ -1,7 +1,12 @@
 function StockUpdateCard() {
     return (
         <>
-            <div className="max-w-full mx-4 py-6 sm:mx-auto sm:px-6 lg:px-8">
+            <div className="text-left overflow-hidden transition-all w-full mt-8 ml-4">
+                <div className="bg-white p-5 pb-0">
+                    <p className="text-3xl font-bold text-black">Key Updates</p>
+                </div>
+            </div>
+            <div className="max-w-full mx-4 pb-6 sm:mx-auto sm:px-6 lg:px-8">
                 <div className="sm:flex sm:space-x-4">
                     <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 border-[1px] border-black">
                         <div className="bg-white p-5">

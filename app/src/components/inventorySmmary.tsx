@@ -1,7 +1,7 @@
 function InventorySummary() {
     return (
         <>
-            <div className="max-w-full mx-4 my-24 py-6 sm:mx-auto sm:px-6 lg:px-8">
+            <div className="max-w-full mx-4 my-8 py-6 sm:mx-auto sm:px-6 lg:px-8">
                 <div className="sm:flex sm:space-x-4">
                     <div className="w-full flex flex-col mt-8 space-y-4">
                         <div className="bg-white rounded-lg text-left overflow-hidden transition-all w-full textRight">

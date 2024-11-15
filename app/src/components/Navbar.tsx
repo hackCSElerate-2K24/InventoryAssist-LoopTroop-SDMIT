@@ -13,6 +13,7 @@ import supplier from "../assets/supplier.svg"
 import home from "../assets/home.png"
 import { useRef } from "react"
 import { Button } from "./ui/button"
+import logo from '../assets/inventoryAssist.png'
 
 
 const items = [
@@ -49,8 +50,16 @@ function Navbar() {
     const ref = useRef(null);
     return (
         <div className="z-50 px-8 bg-white border-b-2 h-16 flex items-center justify-between fixed top-0 left-0 w-screen">
-            <div className="logo bg-orange-100 w-10 h-full">
-            </div>
+            <a href="/">
+              <div className="h-10 flex items-center ">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="aspect-square h-full object-cover"
+                />
+                <h1 className="font-bold text-xl ml-2">Inventory Assist</h1>
+              </div>
+            </a>
             <div className="">
                 <Sheet>
                 <SheetTrigger>
