@@ -63,8 +63,8 @@ export function Chart() {
                         cursor={false}
                         content={<ChartTooltipContent indicator="dashed" />}
                     />
-                    <Bar dataKey="order" fill="var(--color-order)" radius={4} />
-                    <Bar dataKey="amt" fill="var(--color-amt)" radius={4} />
+                    <Bar dataKey="order" fill="#3b3838" radius={4} />
+                    <Bar dataKey="amt" fill="#878b91" radius={4} />
                 </BarChart>
                 </ChartContainer>
                 </CardContent>
