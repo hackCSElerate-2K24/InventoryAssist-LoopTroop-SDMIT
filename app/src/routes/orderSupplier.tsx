@@ -68,7 +68,7 @@ function OrderSupplier() {
         <div className="flex items-center justify-center w-1/4">
           <button 
             onClick={handleOrder} 
-            className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600"
+            className="px-6 py-3 text-white rounded-lg font-semibold  bg-[#3b3838]/[0.8] hover:bg-[#3b3838]"
           >
             Order
           </button>

@@ -62,7 +62,7 @@ function RouteComponent() {
           {/* Order Button linking to OrderSupplierRoute */}
           <div className="flex items-center justify-center w-1/4">
             <Link to="/orderSupplier">
-              <button className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600">
+              <button className="px-6 py-3 text-white rounded-lg font-semibold  bg-[#3b3838]/[0.8] hover:bg-[#3b3838]">
                 Order
               </button>
             </Link>
