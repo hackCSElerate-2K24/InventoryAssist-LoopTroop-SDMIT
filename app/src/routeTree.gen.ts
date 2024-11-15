@@ -12,8 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SuppliersImport } from './routes/suppliers'
-import { Route as SettingImport } from './routes/setting'
 import { Route as RegisterImport } from './routes/register'
+import { Route as ProfileImport } from './routes/profile'
+import { Route as OrderSupplierImport } from './routes/orderSupplier'
 import { Route as LoginImport } from './routes/login'
 import { Route as InventoryImport } from './routes/inventory'
 import { Route as CategoryImport } from './routes/category'
@@ -27,15 +28,21 @@ const SuppliersRoute = SuppliersImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const SettingRoute = SettingImport.update({
-  id: '/setting',
-  path: '/setting',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const RegisterRoute = RegisterImport.update({
   id: '/register',
   path: '/register',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProfileRoute = ProfileImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const OrderSupplierRoute = OrderSupplierImport.update({
+  id: '/orderSupplier',
+  path: '/orderSupplier',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -95,18 +102,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
+    '/orderSupplier': {
+      id: '/orderSupplier'
+      path: '/orderSupplier'
+      fullPath: '/orderSupplier'
+      preLoaderRoute: typeof OrderSupplierImport
+      parentRoute: typeof rootRoute
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileImport
+      parentRoute: typeof rootRoute
+    }
     '/register': {
       id: '/register'
       path: '/register'
       fullPath: '/register'
       preLoaderRoute: typeof RegisterImport
-      parentRoute: typeof rootRoute
-    }
-    '/setting': {
-      id: '/setting'
-      path: '/setting'
-      fullPath: '/setting'
-      preLoaderRoute: typeof SettingImport
       parentRoute: typeof rootRoute
     }
     '/suppliers': {
@@ -126,8 +140,9 @@ export interface FileRoutesByFullPath {
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
   '/login': typeof LoginRoute
+  '/orderSupplier': typeof OrderSupplierRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
-  '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
 
@@ -136,8 +151,9 @@ export interface FileRoutesByTo {
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
   '/login': typeof LoginRoute
+  '/orderSupplier': typeof OrderSupplierRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
-  '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
 
@@ -147,8 +163,9 @@ export interface FileRoutesById {
   '/category': typeof CategoryRoute
   '/inventory': typeof InventoryRoute
   '/login': typeof LoginRoute
+  '/orderSupplier': typeof OrderSupplierRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
-  '/setting': typeof SettingRoute
   '/suppliers': typeof SuppliersRoute
 }
 
@@ -159,8 +176,9 @@ export interface FileRouteTypes {
     | '/category'
     | '/inventory'
     | '/login'
+    | '/orderSupplier'
+    | '/profile'
     | '/register'
-    | '/setting'
     | '/suppliers'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -168,8 +186,9 @@ export interface FileRouteTypes {
     | '/category'
     | '/inventory'
     | '/login'
+    | '/orderSupplier'
+    | '/profile'
     | '/register'
-    | '/setting'
     | '/suppliers'
   id:
     | '__root__'
@@ -177,8 +196,9 @@ export interface FileRouteTypes {
     | '/category'
     | '/inventory'
     | '/login'
+    | '/orderSupplier'
+    | '/profile'
     | '/register'
-    | '/setting'
     | '/suppliers'
   fileRoutesById: FileRoutesById
 }
@@ -188,8 +208,9 @@ export interface RootRouteChildren {
   CategoryRoute: typeof CategoryRoute
   InventoryRoute: typeof InventoryRoute
   LoginRoute: typeof LoginRoute
+  OrderSupplierRoute: typeof OrderSupplierRoute
+  ProfileRoute: typeof ProfileRoute
   RegisterRoute: typeof RegisterRoute
-  SettingRoute: typeof SettingRoute
   SuppliersRoute: typeof SuppliersRoute
 }
 
@@ -198,8 +219,9 @@ const rootRouteChildren: RootRouteChildren = {
   CategoryRoute: CategoryRoute,
   InventoryRoute: InventoryRoute,
   LoginRoute: LoginRoute,
+  OrderSupplierRoute: OrderSupplierRoute,
+  ProfileRoute: ProfileRoute,
   RegisterRoute: RegisterRoute,
-  SettingRoute: SettingRoute,
   SuppliersRoute: SuppliersRoute,
 }
 
@@ -217,8 +239,9 @@ export const routeTree = rootRoute
         "/category",
         "/inventory",
         "/login",
+        "/orderSupplier",
+        "/profile",
         "/register",
-        "/setting",
         "/suppliers"
       ]
     },
@@ -234,11 +257,14 @@ export const routeTree = rootRoute
     "/login": {
       "filePath": "login.tsx"
     },
+    "/orderSupplier": {
+      "filePath": "orderSupplier.tsx"
+    },
+    "/profile": {
+      "filePath": "profile.tsx"
+    },
     "/register": {
       "filePath": "register.tsx"
-    },
-    "/setting": {
-      "filePath": "setting.tsx"
     },
     "/suppliers": {
       "filePath": "suppliers.tsx"

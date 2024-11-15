@@ -39,10 +39,11 @@ const chartConfig = {
 export function Chart() {
   return (
     <>
-    <div className="max-w-full mx-4 py-6 sm:mx-auto sm:px-6 lg:px-8">
+    <div className="pl-16">
+    <div className="max-w-full sm:mx-auto sm:px-6 sm:pr-0 lg:px-8 lg:pr-0">
         <div className="sm:flex sm:space-x-4">
             {/* Card with flexible height */}
-            <Card className="m-8 w-full border-black border-[1px]">
+            <Card className="w-full border-black border-[1px]">
               <CardHeader>
                 <CardTitle>Sales order and Sales amount per month</CardTitle>
                 <CardDescription>January - June 2024</CardDescription>
@@ -62,14 +63,17 @@ export function Chart() {
                         cursor={false}
                         content={<ChartTooltipContent indicator="dashed" />}
                     />
-                    <Bar dataKey="order" fill="var(--color-order)" radius={4} />
-                    <Bar dataKey="amt" fill="var(--color-amt)" radius={4} />
+                    <Bar dataKey="order" fill="#3b3838" radius={4} />
+                    <Bar dataKey="amt" fill="#878b91" radius={4} />
                 </BarChart>
                 </ChartContainer>
                 </CardContent>
             </Card>
 
+        {/* Dividing Line */}
+        <div className="border-l border-black"></div>
         </div>
+    </div>
     </div>
     </>
   )

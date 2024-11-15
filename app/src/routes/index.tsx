@@ -31,6 +31,9 @@ function RouteComponent() {
       <div>
       <StockUpdateCard/>
       </div>
+      <div className="bg-white lg:mt-14 sm:mt-0 lg:mx-24 lg:mb-8 sm:mx-24 sm:mb-4">
+        <p className="text-3xl font-bold text-black">Overview</p>
+      </div>
       <div className='grid grid-cols-2'>
         <div>
           <Chart />

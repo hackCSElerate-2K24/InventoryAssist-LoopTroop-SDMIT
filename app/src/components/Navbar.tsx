@@ -15,6 +15,8 @@ import { useRef } from "react";
 import { Button } from "./ui/button";
 import useAuthStore from "../store/authStore";
 import authService from "@/appwrite/auth.ts"; // Import the store
+import logo from '../assets/inventoryAssist.png'
+
 
 const items = [
   {
@@ -38,8 +40,8 @@ const items = [
     icons: supplier,
   },
   {
-    title: "Settings",
-    url: "/setting",
+    title: "Profile",
+    url: "/profile",
     icons: gear,
   },
 ];
@@ -51,9 +53,17 @@ function Navbar() {
 
   return (
     <div className="px-8 bg-white border-b-2 h-16 flex items-center justify-between fixed top-0 left-0 w-screen">
-      <div className="logo bg-orange-100 w-10 h-full">
-        {login ? 'hi': 'bi'}
-      </div>
+            <a href="/">
+              <div className="h-10 flex items-center ">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="aspect-square h-full object-cover"
+                />
+                <h1 className="font-bold text-xl ml-2">Inventory Assist</h1>
+              </div>
+            </a>
+
       <div>
         {
           userInfo &&
