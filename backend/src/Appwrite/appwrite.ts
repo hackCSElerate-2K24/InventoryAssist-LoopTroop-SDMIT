@@ -1,6 +1,7 @@
 import { Client, Databases } from 'node-appwrite';
 import { configDotenv } from 'dotenv';
 
+
 configDotenv();
 
 const createAppwriteClient = () => {

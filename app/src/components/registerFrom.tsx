@@ -24,7 +24,7 @@ const RegisterPage = () => {
         }
 
         try {
-            const user = await authService.register({ email, password, fullname });
+            const user = await authService.createAccount({ email, password, name:fullname });
             setUser(user); // Set the authenticated user in authStore
             navigate({ to: "/" }); // Redirect to home or welcome page
             console.log("Registration successful!", user);
