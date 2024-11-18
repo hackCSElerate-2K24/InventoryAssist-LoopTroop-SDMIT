@@ -32,9 +32,17 @@ function RouteComponent() {
       <div>
         <TopSellingItems />
       </div>
+      <div className='border-grey-500 border-[1px]'></div> <br />
+      <div className='text-center text-3xl'>
+        <h2>
+          Barcode Scanner
+        </h2>
+      </div><br />
+      <div className="flex justify-center text-center text-3xl">
+        <BarcodeScannerComponent />
+      </div>
+      <br /><br />
     </div>
-    <BarcodeScannerComponent />
-      
     </>
   )
 }

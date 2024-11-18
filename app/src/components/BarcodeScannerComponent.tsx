@@ -17,17 +17,20 @@ const BarcodeScannerComponent = () => {
   },[barcode, setBarcode])
 
   return (
-    <div className="w-96">
-      <h2>Barcode Scanner</h2>
-      <div>
-        <p>{barcode}</p>
+    <>
+      <div className='flex items-center gap-10 border-black border-[1px] p-16'>
+        <BarcodeScanner
+          width={600}
+          height={600}
+          onUpdate={handleScan}  // Handle barcode scan results
+        />
+        <h2>
+          <div className="bg-white">
+            <p>{barcode}</p>
+          </div>
+        </h2>
       </div>
-      <BarcodeScanner
-        width={500}
-        height={500}
-        onUpdate={handleScan}  // Handle barcode scan results
-      />
-    </div>
+    </>
   );
 };
 
