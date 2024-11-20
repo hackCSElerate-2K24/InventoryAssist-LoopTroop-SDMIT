@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import BarcodeScanner from 'react-qr-barcode-scanner';  // Corrected import
+import React, { useEffect, useState } from "react";
+import BarcodeScanner from "react-qr-barcode-scanner"; // Corrected import
 
 const BarcodeScannerComponent = () => {
   const [barcode, setBarcode] = useState<string | null>("Not Scanned");
@@ -7,27 +7,28 @@ const BarcodeScannerComponent = () => {
   const handleScan = (err: any, result: any) => {
     if (result) {
       setBarcode(result.text);
-        // Set the barcode data if scanned
     } else {
-      setBarcode("Not Scanned");  // Handle when no barcode is scanned
+      setBarcode("Not Scanned");
     }
   };
-  useEffect(()=>{
-    console.log(barcode)
-  },[barcode, setBarcode])
+
+  useEffect(() => {
+    console.log(barcode);
+  }, [barcode, setBarcode]);
 
   return (
-    <div className="w-96">
-      <h2>Barcode Scanner</h2>
-      <div>
-        <p>{barcode}</p>
+    <>
+      <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 border-black border-[1px] p-4 sm:p-8 lg:p-16">
+        <BarcodeScanner
+          width={500}
+          height={500}
+          onUpdate={handleScan}
+        />
+        <div className="bg-white text-center lg:text-3xl sm:text-lg md:text-2xl">
+          <p>{barcode}</p>
+        </div>
       </div>
-      <BarcodeScanner
-        width={500}
-        height={500}
-        onUpdate={handleScan}  // Handle barcode scan results
-      />
-    </div>
+    </>
   );
 };
 

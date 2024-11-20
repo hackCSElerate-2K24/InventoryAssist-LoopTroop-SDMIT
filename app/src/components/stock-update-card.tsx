@@ -68,8 +68,7 @@ function StockUpdateCard() {
                 </div>
             </div>
         </div>
-        </>
-    )
+    );
 }
 
-export default StockUpdateCard
+export default StockUpdateCard;
