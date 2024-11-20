@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4194a73a-c4ac-46e6-8ddb-98112e19e202" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/routes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/routes/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/routes/suppliers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/suppliers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/category.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +100,8 @@
       <workItem from="1731621991022" duration="727000" />
       <workItem from="1731623264941" duration="306000" />
       <workItem from="1731628111530" duration="3620000" />
-      <workItem from="1731656814875" duration="759000" />
+      <workItem from="1731656814875" duration="2053000" />
+      <workItem from="1732042095697" duration="28000" />
     </task>
     <servers />
   </component>

@@ -45,7 +45,7 @@ function RouteComponent() {
     </div>
     
 
-    {/*<BarcodeScannerComponent />*/}
+    <BarcodeScannerComponent />
       
     </>
   )
